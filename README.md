@@ -1,7 +1,7 @@
 wear
 ====
 
-Wear is a Go module for writing Wayland compositors using the Elm architecture. It is _highly_ experimental and is being developed primarily for use in [Kawa](https://github.com/DeedleFake/kawa).
+Wear is a Go module for writing Wayland compositors using the Elm architecture. It is _highly_ experimental and is being developed primarily for use in [kawa](https://github.com/DeedleFake/kawa).
 
 Design Example
 --------------
