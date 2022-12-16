@@ -98,7 +98,7 @@ func Run(ctx context.Context, m Model) error {
 			}
 
 			loop.Enqueue(funcMsg(func(m model) (model, Cmd) {
-				err := ev.Flush()
+				err := ev()
 				if err != nil {
 					log.Printf("flush events: %v", err)
 				}
