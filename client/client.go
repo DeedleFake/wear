@@ -77,7 +77,6 @@ func Run(ctx context.Context, m Model) error {
 
 		m: m,
 	})
-	go loop.Run(ctx, nil)
 
 	registry.Listener = &registryListener{
 		loop: loop,
@@ -91,6 +90,13 @@ func Run(ctx context.Context, m Model) error {
 		select {
 		case <-ctx.Done():
 			return nil
+
+		case update, ok := <-loop.Updates():
+			if !ok {
+				return nil
+			}
+
+			update()
 
 		case ev, ok := <-client.Events():
 			if !ok {
